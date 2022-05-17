@@ -1,0 +1,8 @@
+version: '3'
+services:
+  rubybox:
+    hostname: rubybox
+    build: .
+    volumes:
+      - ./RubyBox:/usr/src/rubybox
+    tty: true
