@@ -5,10 +5,10 @@ FROM ruby:3.1
 
 RUN apt-get update
 
-RUN groupadd ruser && useradd -g ruser ruser
+RUN groupadd rgroup && useradd -g rgroup ruser
+RUN mkdir /home/ruser
+COPY ./config/gemrc /home/ruser/.gemrc
+RUN chown -R ruser:rgroup /home/ruser
 USER ruser
 
-COPY ./config/gemrc /root/.gemrc
-
 WORKDIR /usr/src/rubybox
-
