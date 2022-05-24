@@ -5,6 +5,10 @@ FROM ruby:3.1
 
 RUN apt-get update
 
+RUN groupadd ruser && useradd -g ruser ruser
+USER ruser
+
 COPY ./config/gemrc /root/.gemrc
 
 WORKDIR /usr/src/rubybox
+
