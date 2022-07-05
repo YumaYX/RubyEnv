@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -d RubyBox ]; then
-  git clone https://github.com/YumaYX/RubyBox.git
+  git clone git@github.com:YumaYX/RubyBox.git
 fi
 cd RubyBox && git pull && cd ..
 
